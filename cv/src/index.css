@@ -131,3 +131,6 @@
     @apply font-sans;
     }
 }
+@utility container {
+  @apply mx-auto max-w-7xl px-3;
+}
