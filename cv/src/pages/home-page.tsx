@@ -1,4 +1,4 @@
-import { Calendar, Flag, Folder, House } from 'lucide-react'
+import { Calendar, Code, Flag, Folder, House } from 'lucide-react'
 import { Link } from 'lucide-react'
 
 import { useInView } from '@/hooks/useInView'
@@ -6,7 +6,7 @@ import { useInView } from '@/hooks/useInView'
 export const HomePage = () => {
   const { ref: personalRef, isVisible: personalVisible } = useInView()
   const { ref: educationRef, isVisible: educationVisible } = useInView()
-
+  const { ref: coursesRef, isVisible: coursesVisible } = useInView()
   return (
     <>
       <section
@@ -82,6 +82,51 @@ export const HomePage = () => {
           </p>
           <div className='mt-8'>
             <p>*what are you currently studying*</p>
+          </div>
+        </div>
+      </section>
+      <section
+        ref={coursesRef}
+        className={`container mt-12 transition-all duration-700 ease-out ${
+          coursesVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
+        }`}
+      >
+        <div className='flex h-10 w-full items-center justify-center bg-black sm:h-12 sm:w-max'>
+          <h2 className='m-1 text-xl font-semibold text-white'>COURSES</h2>
+        </div>
+
+        <div className='mt-4 space-y-8 text-lg'>
+          <div>
+            <div className='flex flex-col items-start justify-between sm:flex-row sm:items-center'>
+              <p className='flex gap-1'>
+                <Code />
+                *course name*
+              </p>
+              <p className='mt-2 text-gray-400 sm:mt-0'>*date of courses*</p>
+            </div>
+            <p className='text-gray-400'>*kind of lesson*</p>
+          </div>
+
+          <div>
+            <div className='flex flex-col items-start justify-between sm:flex-row sm:items-center'>
+              <p className='flex gap-1'>
+                <Code />
+                *course name*
+              </p>
+              <p className='mt-2 text-gray-400 sm:mt-0'>*date of courses*</p>
+            </div>
+            <p className='text-gray-400'>*kind of lesson*</p>
+          </div>
+
+          <div>
+            <div className='flex flex-col items-start justify-between sm:flex-row sm:items-center'>
+              <p className='flex gap-1'>
+                <Code />
+                *course name*
+              </p>
+              <p className='mt-2 text-gray-400 sm:mt-0'>*date of courses*</p>
+            </div>
+            <p className='text-gray-400'>*kind of lesson*</p>
           </div>
         </div>
       </section>
