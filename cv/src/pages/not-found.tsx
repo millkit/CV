@@ -15,7 +15,6 @@ const NotFoundPage = ({ resetErrorBoundary, error }: FallbackProps) => {
         <div className="rounded-full bg-red-100 p-6">
           <AlertTriangle className="h-12 w-12 text-red-600" />
         </div>
-
         <h2 className="text-3xl font-bold tracking-tight">
           Something went wrong
         </h2>
@@ -24,7 +23,6 @@ const NotFoundPage = ({ resetErrorBoundary, error }: FallbackProps) => {
           An unexpected error occurred. This is likely a temporary issue that we
           are working on fixing.
         </p>
-
         <div className="bg-muted w-full overflow-auto rounded-md p-4 text-left text-sm">
           <p className="font-mono text-red-500">{errorMessage}</p>
           {errorDigest && (
