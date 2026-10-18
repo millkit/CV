@@ -1,11 +1,15 @@
-import { Calendar, Flag, Folder, House } from "lucide-react";
-import { Link } from 'lucide-react';
+import { Calendar, Flag, Folder, House } from 'lucide-react'
+import { Link } from 'lucide-react'
+
 import { useInView } from '@/hooks/useInView'
 
 export const HomePage = () => {
-    const { ref: personalRef, isVisible: personalVisible } = useInView()
-    const { ref:educationRef, isVisible: educationVisible } = useInView()
-  return (<> <section
+  const { ref: personalRef, isVisible: personalVisible } = useInView()
+  const { ref: educationRef, isVisible: educationVisible } = useInView()
+
+  return (
+    <>
+      <section
         ref={personalRef}
         className={`container mt-12 transition-all duration-700 ease-out ${
           personalVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -14,17 +18,17 @@ export const HomePage = () => {
         <div className='flex items-center justify-center bg-black sm:h-12 sm:w-max'>
           <h2 className='m-1 text-xl font-semibold text-white'>PERSONAL DATA</h2>
         </div>
+
         <div className='mt-4 space-y-2 text-lg'>
           <p className='flex gap-1'>
-            <House /> 
-           *Street*, 01001, Kyiv, Kyiv City, Ukraine
+            <House />
+            *Street*, 01001, Kyiv, Kyiv City, Ukraine
           </p>
           <p className='flex gap-1'>
             <Folder /> *Email*
           </p>
           <p className='flex gap-1'>
             <Calendar />
-
             *Date of birth*
           </p>
           <p className='flex gap-1'>
@@ -38,7 +42,7 @@ export const HomePage = () => {
               rel='noopener noreferrer'
               className='flex items-center gap-1 text-blue-500 transition hover:underline'
             >
-              <Link/>
+              <Link />
               LinkedIn
             </a>
           </p>
@@ -49,15 +53,14 @@ export const HomePage = () => {
               rel='noopener noreferrer'
               className='flex items-center gap-1 text-blue-500 transition hover:underline'
             >
-              <Link/>
+              <Link />
               GitHub
             </a>
           </p>
         </div>
       </section>
-   
 
-    <section
+      <section
         ref={educationRef}
         className={`container mt-12 transition-all duration-700 ease-out ${
           educationVisible ? 'translate-y-0 opacity-100' : 'translate-y-8 opacity-0'
@@ -78,12 +81,10 @@ export const HomePage = () => {
             <span className='font-semibold'>3rd-year student</span>
           </p>
           <div className='mt-8'>
-            <p>
-              *what are you currently studying*
-
-            </p>
+            <p>*what are you currently studying*</p>
           </div>
         </div>
       </section>
-      </>)
-};
+    </>
+  )
+}
